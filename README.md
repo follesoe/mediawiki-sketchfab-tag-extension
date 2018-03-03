@@ -42,7 +42,15 @@ Download the `LocalSettings.php` file at the end of configuration, and store it 
 Close the container, and launch it using the `run.sh` script, or the following command:
 
 ```shell
-docker run --rm -p 8080:80 -it -v $PWD/data:/var/www/data -v $PWD/LocalSettings.php:/var/www/html/LocalSettings.php mediawiki
+docker run \
+  --rm \
+  -it \
+  -p 8080:80 \
+  -v $PWD/data:/var/www/data \
+  -v $PWD/LocalSettings.php:/var/www/html/LocalSettings.php \
+  -v $PWD/Sketchfab:/var/www/html/extensions/Sketchfab \
+  --name devwiki \
+  mediawiki
 ```
 
 This will launch a container mapping in your newly created SQLite database and `LocalSettings.php` configuration file.
