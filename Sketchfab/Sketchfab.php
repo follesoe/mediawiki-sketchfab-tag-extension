@@ -50,7 +50,12 @@ class Sketchfab {
 		if ( !empty( $argv['sfid'] ) ) {
 			$sfid = $argv['sfid'];
 		} elseif ( !empty ( $input ) ) {
-			$sfid = $input;
+			$sfid = self::getSketchfabId( $input );
+		}
+
+		//  Did we not get an ID at all? If not do not generate any HTML.
+		if ( $sfid === false ) {
+			return '';
 		}
 
 		// Support the pixel unit (px) for height/width parameters in case users
@@ -91,6 +96,24 @@ class Sketchfab {
 		}
 
 		return '';
+	}
+
+	/**
+	 * Extracts the Sketchfab Object Id from the $url argument.
+	 *
+	 * @param string $url Sketchfab Url
+	 * @return string Sketchfab Object ID on success, boolean false on failure.
+	 */
+	private static function getSketchfabId( $url ) {
+		$pattern = '~[https|http]:\/\/sketchfab\.com\/models\/(.+)*~i';
+		$id = false;
+
+		if ( preg_match( $pattern, $url, $preg ) ) {
+			$id = $preg[1];
+		} elseif ( preg_match( '/([0-9A-Za-z_-]+)/', $url, $preg ) ) {
+			$id = $preg[1];
+		}
+		return $id;
 	}
 
 	/**

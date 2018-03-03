@@ -14,6 +14,9 @@ Sketchfab 3D models can be embedded like this:
 <!-- Object id inside tag -->
 <sketchfab>198eff4432cc483ca33b2a648d895b1e</sketchfab>
 
+<!-- Object id extracted from Sketchfab URL -->
+<sketchfab>https://sketchfab.com/models/198eff4432cc483ca33b2a648d895b1e</sketchfab>
+
 <!-- Object id as attribute -->
 <sketchfab sfid="198eff4432cc483ca33b2a648d895b1e" />
 
