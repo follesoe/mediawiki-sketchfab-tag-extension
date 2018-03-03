@@ -2,6 +2,10 @@
 
 MediaWiki Tag Extension for embedding Sketchfab 3D models.
 
+## Installation
+
+[Download the source code](https://github.com/follesoe/mediawiki-sketchfab-tag-extension/archive/master.zip) and copy the `Sketchfab` directory to your MediaWiki `extension` directory.
+
 ## Usage
 
 Sketchfab 3D models can be embedded like this:
