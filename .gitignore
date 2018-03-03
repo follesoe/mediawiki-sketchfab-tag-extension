@@ -1,0 +1,6 @@
+# MediaWiki Data Directory, mounted as volume in container
+data/*
+!data/.gitkeep
+
+# LocalSettings.php configuration file, downloaded after initial setup
+LocalSettings.php

@@ -1,0 +1,1 @@
+docker run --rm -p 8080:80 -it -v $PWD/data:/var/www/data mediawiki
