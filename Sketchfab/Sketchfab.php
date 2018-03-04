@@ -27,6 +27,9 @@
  * THE SOFTWARE.
  *
  */
+
+$wgHooks['ParserFirstCallInit'][] = 'Sketchfab::registerTags';
+
 class Sketchfab {
 	/**
 	 * Register the new tags with the Parser.
